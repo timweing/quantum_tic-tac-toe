@@ -1,0 +1,86 @@
+<html>
+	<head>
+		<title>Tic Tac Toe</title>
+		<meta charset="utf-8">
+	  <link rel="stylesheet" href="css/main.css">
+	</head>
+
+	<body>
+		<div id="loading">
+  		<img id="loading-image" src="css/loader.gif" alt="Loading..." />
+		</div>
+		<br>
+
+		<div class="wrapper">
+			<center>
+				<h1>Quantum Tic-Tac-Toe &nbsp; <a href="instruction.html"><img id="instruction" src="img/instruction.png" alt="Instruction" width="40px"/></a></h1> <br><br>
+			</center>
+			<div id="buttons">
+				Next move player:	<span id="Player"></span>
+				<br><br>
+				Choice of move<br><br>
+				<button id="1" onclick="define_zug(1);">switch</button>
+				<button id="2" onclick="define_zug(2);">retain</button>
+				<button id="3" onclick="define_zug(3);">superposition</button>
+				<button id="4" onclick="define_zug(4);">entanglement</button>
+			</div>
+			<div id="settings">
+				Winner:	<span id="winner"></span> &nbsp;&nbsp;&nbsp;&nbsp; <button id="NewGame" onClick="init()">new game</button> <br><br>
+				Settings <br><br>
+				<button id="bot" onclick="change_bot();">use bot</button>
+				<button id="beginner" onclick="change_beginner();">beginner</button>
+			</div>
+		</div>
+
+		<br><br>
+		<b>Note: <span id="Tipp"></span></b> <br><br>
+		<div class="wrapper">
+			<div id="board">
+				<table>
+					<col width="95px" />
+					<col width="95px" />
+					<col width="95px" />
+				  <tr>
+				    <th><button class="fieldbutton" onClick="select(zug,1);" id="p1"> </button></th>
+				    <th><button class="fieldbutton" onClick="select(zug,2);" id="p2"> </button></th>
+				    <th><button class="fieldbutton" onClick="select(zug,3);" id="p3"> </button></th>
+				  </tr>
+				  <tr>
+						<th><button class="fieldbutton" onClick="select(zug,4);" id="p4"> </button></th>
+				    <th><button class="fieldbutton" onClick="select(zug,5);" id="p5"> </button></th>
+				    <th><button class="fieldbutton" onClick="select(zug,6);" id="p6"> </button></th>
+				  </tr>
+				  <tr>
+						<th><button class="fieldbutton" onClick="select(zug,7);" id="p7"> </button></th>
+				    <th><button class="fieldbutton" onClick="select(zug,8);" id="p8"> </button></th>
+				    <th><button class="fieldbutton" onClick="select(zug,9);" id="p9"> </button></th>
+				  </tr>
+				</table>	<br><br>
+			</div>
+			<div id="circuit">
+				<span id="drawing"></span><br><br><br>
+			</div>
+		</div>
+		<br><br><br>
+		<div class="wrapper" id="beginner1">
+			<div id="analysis">
+				Gate combinations<br>
+				<img id="combinations" src="img/1.png" alt="Loading..." width="450"/><br>
+			</div>
+			<div id="tactics">
+				Tactics<br><br>
+				<span id="tactics_description"></span><br>
+			</div>
+		</div>
+		<br><br><br>
+		<div class="wrapper" id="beginner2">
+			History:	<span id="history"></span>
+		</div>
+		<br><br><br>
+
+		<button id="NewGame" onClick="init()">new game</button>
+	</body>
+
+	<script src="js/quantum-circuit.min.js"></script>
+	<script src="js/main.js"></script>
+</html>

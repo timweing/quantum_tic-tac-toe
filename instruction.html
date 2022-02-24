@@ -1,0 +1,212 @@
+<html>
+	<head>
+		<title>Tic Tac Toe Instruction</title>
+		<meta charset="utf-8">
+	  <link rel="stylesheet" href="css/main.css">
+	</head>
+
+	<body>
+
+		<div class="wrapper_intro">
+			<center>
+				<h1>Instruction to Quantum Tic-Tac-Toe</h1> <br><br>
+			</center>
+			<div id="buttons">
+				<button onclick="window.location.href='index.html'">back to the game</button>
+			</div>
+			<br><br><br><br>
+
+			<div>
+				<h2>Game introduction</h2>
+				<p>
+					<b>TIPP: If you are new to quantum mechanics and quantum computers, please read the
+					<a href="#intro">short introduction</a> first.</b>
+				</p>
+				<p>
+					Quantum Tic-Tac-Toe is played on the same playing field as the classic Tic-Tac-Toe
+					by the players X and O. Each of the 9 squares is represented by a
+					<a href="https://en.wikipedia.org/wiki/Qubit">qubit</a>.
+					Quantum Tic-Tac-Toe is using additional concepts such
+					as <a href="https://en.wikipedia.org/wiki/Quantum_superposition">superposition</a>,
+					<a href="https://en.wikipedia.org/wiki/Quantum_entanglement">entanglement</a>, and
+					<a href="https://en.wikipedia.org/wiki/Wave_function_collapse">collapse</a>.
+					This makes quantum Tic-Tac-Toe on the one hand different and more complex,
+					on the other hand of course more interesting than classical Tic-Tac-Toe.
+				</p>
+				<p>
+					<b><a href="https://en.wikipedia.org/wiki/Quantum_logic_gate"> Quantum gates</a>:	</b>
+					Each qubit is initialized with the starting <a href="https://en.wikipedia.org/wiki/Quantum_state"> state</a> |1⟩ by means of <a href="#x-gate">X gates</a>.<br>
+					<b>Sequence:	</b> Players take turns to make moves, with X making the first move.<br>
+					<b>Move:	</b>Player X and player O are quantum players, which have the possibility of multiple
+					quantum moves. These moves are as follows:
+					<ul>
+						<li><b>Switch:</b> In this move, an <a href="#x-gate">X gate</a> is attached to the selected qubit.
+							This acts like a logical NOT and inverts (switches) the actual state.</li>
+						<li><b>Maintain:</b> On this play, an <a href="#id-gate">ID gate</a> is attached to the selected qubit.
+							Thus, it retains the state.</li>
+						<li><b>Superposition:</b> In this move, an <a href="#h-gate">Hadamard gate (H gate)</a> is attached to the selected qubit.
+							is attached. This retains it in superposition.</li>
+						<li><b>Entanglement:</b> Moves can be entangled by moving two squares by the move
+							"Entanglement." <a href="https://en.wikipedia.org/wiki/Quantum_entanglement">Entanglement</a>
+							places a field in <a href="https://en.wikipedia.org/wiki/Quantum_superposition">superposition</a>
+							with an <a href="#h-gate">H gate</a> and
+							then uses that field as the control qubit of a <a href="#cnot-gate">CNOT gate</a>.</li>
+					</ul>
+					<b>Number of operations per qubit:	</b>A maximum of three moves (quantum gates) per qubit can be played.<br>
+					<b><a href="https://en.wikipedia.org/wiki/Measurement_in_quantum_mechanics">Measuring</a> the qubits:	</b>The 9 qubits are not measured and collapse
+					to the classical state until all qubits have been played at least once.
+					Measurement outcomes of “0” are assigned to player O and “1” to player X.
+					Before the measurement we don’t know in all of the positions whether there will be a 0 or 1.
+					So we cannot really say who would win. <br>
+					<b>Winner: </b> After measuring the qubits, the winner is determined.
+					As in the classic Tic-Tac-Toe, three of the same symbols in a row denotes the winner.
+					It does not matter whether these three classical states are
+					horizontal, vertical or diagonal in a row. There are four variants:
+					<ul>
+						<li>Player X has a row and player O does not: This means that X has won.</li>
+						<li>Player O has a row and player X does not: Thus, O has won.</li>
+						<li>No player has a row: This is a draw.</li>
+						<li>A new possibility is, both players have a row: This is also a draw.</li>
+					</ul>
+					<b>Additional settings: </b> The following additional settings are possible:
+					<ul>
+						<li><b>Use bot:</b> In this case player O is played by the computer. Some calculations
+							might take some time so be patient.</li>
+						<li><b>Beginner / expert:</b> This button toggles the game level. In the expert level no further
+							information are displayed, only the last move is displayed in the playing field and
+							the gates are initialized as |0⟩.</li>
+					</ul>
+				</p>
+				<br><br>
+				<div id="buttons">
+					<button onclick="window.location.href='index.html'">back to the game</button>
+				</div>
+				<br><br><br><br>
+			</div>
+
+
+			<div id="intro">
+				<h2>Quantum gates</h2>
+				<p>
+					The difference between a <a href="https://en.wikipedia.org/wiki/Quantum_computing">quantum computer</a>
+					and a classical computer arises
+					on the one hand from the fact that they are built differently.
+					On the other hand, the components with which the respective computer
+					computes are also different. A classical computer calculates with bits,
+					a logical, binary state, i.e., a state, which can take only two possible values.
+					These values can be labeled true/false, on/off. However, they are
+					most often represented as "1" or "0". In contrast, a quantum computer
+					computes with so-called <a href="https://en.wikipedia.org/wiki/Qubit">qubits</a> ("quantum bits").
+					A qubit does not assume
+					a <a href="https://en.wikipedia.org/wiki/Quantum_state">state</a> of either 1 or 0 like a classical bit, but a linear combination of these states.
+					This linear combination of states is also called <a href="https://en.wikipedia.org/wiki/Quantum_superposition">"superposition"</a>.
+					Each qubit is
+					initialized with the |0⟩ state.
+				</p>
+				<p>
+					<a href="https://en.wikipedia.org/wiki/Quantum_logic_gate">Quantum gates</a>,
+					unlike digital gates, are not devices. They can be thought of as
+					manipulations of the <a href="https://en.wikipedia.org/wiki/Quantum_state">state</a> (spins) of a qubit. In this process,
+					the ground state of a qubit is changed. In quantum Tic-Tac-Toe we use
+					the following gates as moves:
+					<ul>
+						<li id="x-gate"><b>X gate:</b> The <a href="https://en.wikipedia.org/wiki/Quantum_logic_gate#Pauli_gates_(X,Y,Z)">Pauli-X gate or X gate</a>
+							 is a 1-qubit gate,
+							i.e., a gate that only acts on a single qubit. The X gate reverses the
+							state vector of a qubit by inverting the amplitude of the respective
+							base state |0⟩ or |1⟩. Thus, the Pauli X gate has the same function as
+							the NOT gate in classical logic gates and is therefore often called bit flip.</li>
+						<li id="id-gate"><b>ID gate:</b> The <a href="https://en.wikipedia.org/wiki/Quantum_logic_gate#Identity_gate">identity gate or ID gate</a>
+							acts on a single qubit and leaves the qubit in its actual state and
+							therefore preserves the actual spin.</li>
+						<li id="h-gate"><b>Hadamard-Gate:</b> The <a href="https://en.wikipedia.org/wiki/Quantum_logic_gate#Hadamard_gate">Hadamard gate or H gate</a> is a gate that acts on a single qubit.
+							Thereby the gate lifts the base state |0⟩ or |1⟩ into a superposition of the two possible states.
+							The Hadamard gate is inverse to itself. Thus, it reverses itself when applied again.</li>
+						<li id="cnot-gate"><b>CNOT gate:</b> The CNOT gate acts on two different qubits, a control qubit
+							and a target qubit. When the qubits are in the base state |0⟩ or |1⟩,
+							they behave like classical bits. In this state, the gate is very simple
+							and intuitive to understand. Here, the CNOT gate performs a NOT operation
+							on the second qubit when the base state of the first qubit is |1⟩.
+							However, if the base state of the first qubit is |0⟩, then it does
+							not change the base state of the second qubit. <br>
+							We only use the CNOT gate in combination with the superposition as Bell state (see below).
+						</li>
+						<li><b><a href="https://en.wikipedia.org/wiki/Bell_state">Bell state:</a></b> The combination of H gate and CNOT gate is called Bell state.
+							The spin of an electron
+							is a quantum mechanical property of the electron. The entanglement can be observed
+							if two electrons are created simultaneously, and their spin
+							is measured in two different apparatuses. It can be seen that the electrons
+							always have opposite spin. But the fact that they always have an opposite spin after the measurement can
+					 	  only be explained by the fact that in spite of spatial distance to each other the
+					 	  electrons are to be understood as a system which is in superposition before the measurement.
+							<a href="https://en.wikipedia.org/wiki/EPR_paradox">Einstein, Podolsky and Rosen formulated in 1935 the EPR effect</a>, according to which quantum
+					 	 entanglement would lead to the violation of the classical principle of local realism,
+					 	 which was called "spooky action at a distance" by Einstein in a famous quotation.</li>
+					</ul>
+					With the measurement of the qubits their state is detected. With this process the state
+					also collapses in a
+					base state of either |0⟩ or |1⟩. In quantum Tic-Tac-Toe this happens
+					as soon as all qubits are at least played once.
+					<br><br>
+					For more details see my <a href="Matura_Maurice_Weingaertner.pdf" target="_blank">Maturaarbeit (in German).</a>
+				</p>
+				<br><br>
+				<div id="buttons">
+					<button onclick="window.location.href='index.html'">back to the game</button>
+				</div>
+				<br><br><br><br>
+			</div>
+
+			<div>
+				<h2>Why quantum Tic-Tac-Toe</h2>
+				<p>
+					<a href="https://en.wikipedia.org/wiki/Quantum_mechanics">Quantum mechanics</a>
+					is often perceived as complicated and confusing due to its drastically
+					different kind of physical laws compared to classical physics. Concepts like
+					<a href="https://en.wikipedia.org/wiki/Quantum_superposition">superposition</a>,
+					<a href="https://en.wikipedia.org/wiki/Quantum_entanglement">entanglement</a>, or
+					<a href="https://en.wikipedia.org/wiki/Quantum_teleportation">teleportation</a>
+					behave differently than we are used to in our
+					world of Newton’s mechanics. Explanation attempts like
+					<a href="https://en.wikipedia.org/wiki/Schr%C3%B6dinger%27s_cat">Schrödinger's cat</a> are hard to
+					imagine and even Einstein had problems with the theory describing entanglement as
+					"spooky action at a distance".
+				</p>
+				<p>
+					The knowledge gained about this new world in recent years has increased enormously.
+					Nevertheless, for many people, getting started in quantum mechanics is a difficult undertaking.
+					It is hard to understand the concepts and their implications for laymen and even
+					experienced physicists. With the rise of quantum computers more and more people are
+					forced to deal with programming of quantum computers and thus need an understanding
+					of quantum mechanics.
+				</p>
+ 			  <p>
+					There already exist several attempts to introduce quantum logic and quantum circuits,
+					which form the basis for many quantum computers. Some of them use
+					<a href="https://en.wikipedia.org/wiki/Game_theory">game theory</a>  and
+					games to provide an easy and attractive starting point. Anticipating the immense growth
+					and high potential of this technology, it is also becoming important for many young people
+					and students to learn about quantum computing at an early age. For this generation,
+					it is important that the entry point is made interesting and attractive.
+				</p>
+				<p>
+					Quantum Tic-Tac-Toe is a learning
+					environment that helps newcomers to get an impression of the behavior of single quantum
+					gates and their combinations in
+					<a href="https://en.wikipedia.org/wiki/Quantum_circuit">quantum circuits</a>.
+					Through the analysis of game tactics and
+					move combinations like in chess the effects of gate combinations become comprehensible.
+					Repeated exposure to these combinations promotes intuitive understanding of individual
+					quantum gates.
+				</p>
+
+				<br><br>
+				<div id="buttons">
+					<button onclick="window.location.href='index.html'">back to the game</button>
+				</div>
+				<br><br><br><br>
+			</div>
+
+	</body>
+
+</html>
